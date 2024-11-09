@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
 
+// Custom hook for using the multi-step form, takes in steps (React Components to render)
 export const useMultistepForm = (steps: ReactElement[]) => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
 

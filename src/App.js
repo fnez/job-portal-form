@@ -18,7 +18,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <main>
+    <main style={{ display: "flex", flexDirection: "column" }}>
       <RouterProvider router={router}></RouterProvider>
     </main>
   );
