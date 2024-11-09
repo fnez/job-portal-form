@@ -4,11 +4,28 @@
   padding: 2rem;
   margin: 1rem;
   border-radius: 0.5rem;
-  width: 600px;
-  height: 600px;
+  width: 632px;
 }
-.pageIndicator {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+
+.navigationContainer {
+  margin-top: 4rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+button.arrow {
+  font-size: 32px;
+  border: none;
+  color: tomato;
+  background: none;
+  cursor: pointer;
+}
+
+.backToLoginLink {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  color: tomato;
 }
