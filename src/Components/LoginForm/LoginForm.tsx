@@ -1,10 +1,11 @@
 import React from "react";
 import "./LoginForm.css";
 import { FaUser, FaLock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const LoginForm = () => {
   return (
-    <div className="wrapper">
+    <div className="container">
       <form action="">
         <h1>Sign In</h1>
         <div className="input-box">
@@ -21,13 +22,14 @@ export const LoginForm = () => {
             <input type="checkbox" />
             Remember me
           </label>{" "}
-          <a href=""> Forgot password</a>
+          <a href="#"> Forgot password</a>
         </div>
 
         <button type="submit">Login</button>
         <div className="register-link">
           <p>
-            Don't have a profile yet ? <a href="">Create one</a>{" "}
+            Don't have a profile yet ?{" "}
+            <Link to="/create-profile">Create one</Link>{" "}
           </p>
         </div>
       </form>
