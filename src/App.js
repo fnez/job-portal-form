@@ -1,11 +1,25 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { LoginForm } from "./Components/LoginForm/LoginForm";
+import { LoginPage } from "./pages/LoginPage.tsx";
+import { CreateProfilePage } from "./pages/CreateProfilePage/CreateProfilePage.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { NotFoundPage } from "./pages/NotFoundPage.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LoginPage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/create-profile",
+    element: <CreateProfilePage />,
+  },
+]);
 
 function App() {
   return (
     <main>
-      <LoginForm />
+      <RouterProvider router={router}></RouterProvider>
     </main>
   );
 }

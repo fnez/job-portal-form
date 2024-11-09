@@ -28,7 +28,7 @@ Builds the app for production to the `build` folder.\
 
 2. **State Management:** Implement React’s Context API or a library to manage form state across steps.
 
-3. **UX/UI Focus:** Design a seamless user experience with clear navigation and feedback (e.g., progress indicator). This Includes media-queries for different screen sizes.
+3. **UX/UI Focus:** Design a seamless user experience with clear navigation and feedback (e.g., progress indicator). This Includes media-queries for different screen sizes. 404 page.
 
 4. **Reusable Components:** Each form step as a standalone component for easier maintenance.
 

@@ -1,0 +1,14 @@
+.formContainer {
+  position: relative;
+  border: 4px solid teal;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  width: 600px;
+  height: 600px;
+}
+.pageIndicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
