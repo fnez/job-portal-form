@@ -14,45 +14,51 @@ export const AdditionalInfoForm = () => {
           }}
         >
           <div>
-            <input type="checkbox" id="ruby" name="ruby" checked />
-            <label style={{ marginLeft: "12px" }} for="ruby">
+            <input type="checkbox" id="ruby" name="ruby" />
+            <label style={{ marginLeft: "12px" }} htmlFor="ruby">
               Ruby
             </label>
           </div>
           <div>
             <input type="checkbox" id="python" name="python" />
-            <label style={{ marginLeft: "12px" }} for="python">
+            <label style={{ marginLeft: "12px" }} htmlFor="python">
               Python
             </label>
           </div>
           <div>
             <input type="checkbox" id="php" name="php" />
-            <label style={{ marginLeft: "12px" }} for="php">
+            <label style={{ marginLeft: "12px" }} htmlFor="php">
               PHP
             </label>
           </div>
           <div>
             <input type="checkbox" id="javascript" name="javascript" />
-            <label style={{ marginLeft: "12px" }} for="javascript">
+            <label style={{ marginLeft: "12px" }} htmlFor="javascript">
               JavaScript
             </label>
           </div>
           <div>
             <input type="checkbox" id="c" name="c" />
-            <label style={{ marginLeft: "12px" }} for="c">
+            <label style={{ marginLeft: "12px" }} htmlFor="c">
               C
             </label>
           </div>
           <div>
             <input type="checkbox" id="c++" name="c++" />
-            <label style={{ marginLeft: "12px" }} for="c++">
+            <label style={{ marginLeft: "12px" }} htmlFor="c++">
               C++
             </label>
           </div>
           <div>
             <input type="checkbox" id="rust" name="rust" />
-            <label style={{ marginLeft: "12px" }} for="rust">
+            <label style={{ marginLeft: "12px" }} htmlFor="rust">
               Rust
+            </label>
+          </div>
+          <div>
+            <input type="checkbox" id="go" name="go" />
+            <label style={{ marginLeft: "12px" }} htmlFor="go">
+              Go
             </label>
           </div>
         </div>
