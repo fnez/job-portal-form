@@ -1,39 +1,63 @@
 import React from "react";
 import { ProfileFormsWrapper } from "../ProfileFormsWrapper.tsx";
 import { FaCirclePlus } from "react-icons/fa6";
+import { WorkFormProps } from "../../types/Types.ts";
+import "../GlobalFormStyles.css";
 
-export const WorkForm = () => {
+export const WorkForm = ({ companies, updateFields }: WorkFormProps) => {
   return (
     <>
       <ProfileFormsWrapper title="Work Experience">
-        <label htmlFor="">Company</label>
-        <input
-          style={{ padding: "6px", fontSize: "24px" }}
-          type="text"
-          required
-          autoFocus
-        />
-        <label htmlFor="">Start Date</label>
-        <input
-          style={{ padding: "6px", fontSize: "24px" }}
-          type="date"
-          required
-        />
-        <label htmlFor="">End Date</label>
-        <input
-          style={{ padding: "6px", fontSize: "24px" }}
-          type="date"
-          required
-        />
-        <label htmlFor="">Responsibilities</label>
-        <textarea
-          id="responsibilities"
-          name="responsibilities"
-          rows="5"
-          cols="40"
-          placeholder="Led a team of developers..."
-          style={{ padding: "6px", fontSize: "24px" }}
-        ></textarea>
+        {companies.map(
+          ({ company, startDate, endDate, responsibilities }, index) => (
+            <React.Fragment key={index}>
+              <label htmlFor="">Company</label>
+              <input
+                className="textInput"
+                type="text"
+                required
+                autoFocus
+                value={company}
+                onChange={(e) =>
+                  updateFields({ company: e.target.value, index })
+                }
+              />
+              <label htmlFor="">Start Date</label>
+              <input
+                className="textInput"
+                type="date"
+                required
+                value={startDate}
+                onChange={(e) =>
+                  updateFields({ startDate: e.target.value, index })
+                }
+              />
+              <label htmlFor="">End Date</label>
+              <input
+                className="textInput"
+                type="date"
+                required
+                value={endDate}
+                onChange={(e) =>
+                  updateFields({ endDate: e.target.value, index })
+                }
+              />
+              <label htmlFor="">Responsibilities</label>
+              <textarea
+                id="responsibilities"
+                name="responsibilities"
+                rows={5}
+                cols={40}
+                placeholder="Led a team of developers..."
+                className="textInput"
+                value={responsibilities}
+                onChange={(e) =>
+                  updateFields({ responsibilities: e.target.value, index })
+                }
+              ></textarea>
+            </React.Fragment>
+          )
+        )}
       </ProfileFormsWrapper>
       <div
         style={{
