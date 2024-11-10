@@ -1,0 +1,13 @@
+.fieldSet {
+  padding: 24px;
+}
+
+.fieldsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+label {
+  margin-left: 12px;
+}

@@ -15,7 +15,7 @@ const INITIAL_DATA: FormData = {
   email: "",
   phoneNumber: "",
   companies: [
-    { company: "1", startDate: "", endDate: "", responsibilities: "" },
+    { company: "", startDate: "", endDate: "", responsibilities: "" },
   ],
   programmingLanguages: [
     { ruby: { checked: false } },
@@ -32,14 +32,54 @@ const INITIAL_DATA: FormData = {
 //Page containing the inner form components for creating a profile
 export const CreateProfilePage = () => {
   const [data, setData] = useState(INITIAL_DATA);
-  //sets the state data via the setData hook
-  const updateFields = (fields: Partial<FormData>) => {
+
+  //Updates the state data for UserForm via the setData hook
+  const updateUserFormFields = (fields: Partial<FormData>) => {
     setData((prev) => {
       return {
         ...prev,
         ...fields,
       };
     });
+  };
+
+  const updateWorkFormFields = (
+    fields: Partial<FormData> & { index?: number }
+  ) => {
+    setData((prev) => {
+      // Updating a specific company in the companies array
+      const { index, ...companyFields } = fields;
+      const updatedCompanies = prev.companies.map((company, i) =>
+        i === index ? { ...company, ...companyFields } : company
+      );
+      return {
+        ...prev,
+        companies: updatedCompanies,
+      };
+    });
+  };
+
+  const updateAdditionalInfoFormFields = (
+    fields: Partial<FormData> & { language?: string; checked?: boolean }
+  ) => {
+    setData((prev) => {
+      const updatedProgrammingLanguages = prev.programmingLanguages.map(
+        (lang) => {
+          if (lang[fields.language!]) {
+            return {
+              [fields.language!]: { checked: fields.checked! },
+            };
+          }
+          return lang;
+        }
+      );
+
+      return {
+        ...prev,
+        programmingLanguages: updatedProgrammingLanguages,
+      };
+    });
+    console.log("data is : ", data);
   };
 
   const {
@@ -51,14 +91,18 @@ export const CreateProfilePage = () => {
     handlePrevious,
     handleNext,
   } = useMultistepForm([
-    <UserForm {...data} updateFields={updateFields} />,
-    <WorkForm {...data} updateFields={updateFields} />,
-    <AdditionalInfoForm {...data} updateFields={updateFields} />,
+    <UserForm {...data} updateFields={updateUserFormFields} />,
+    <WorkForm {...data} updateFields={updateWorkFormFields} />,
+    <AdditionalInfoForm
+      {...data}
+      updateFields={updateAdditionalInfoFormFields}
+    />,
   ]);
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    handleNext();
+    if (!isLastStep) return handleNext();
+    alert("Succesful Account Creation");
   };
 
   return (
@@ -69,9 +113,16 @@ export const CreateProfilePage = () => {
       <div className="formContainer">
         <form onSubmit={onSubmit}>
           {step}
+
+          {isLastStep && (
+            <button type="submit" className="arrow">
+              Submit
+            </button>
+          )}
+
           <div className="navigationContainer">
             <button
-              type="submit"
+              type="button"
               className="arrow"
               onClick={handlePrevious}
               style={{ visibility: isFirstStep ? "hidden" : "initial" }}

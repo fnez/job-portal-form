@@ -6,7 +6,7 @@ export type Company = {
   responsibilities: string;
 };
 
-export type ProgrammingLanguage = {
+export type ProgrammingLanguages = {
   [language: string]: { checked: boolean };
 };
 
@@ -16,7 +16,7 @@ export type FormData = {
   email: string;
   phoneNumber: string;
   companies: Company[];
-  programmingLanguages: ProgrammingLanguage[];
+  programmingLanguages: ProgrammingLanguages[];
 };
 
 // UserForm Component types
@@ -41,7 +41,13 @@ type CompanyData = {
 
 type CompaniesData = CompanyData[];
 
-export type WorkFormProps = CompaniesData & {
+export type WorkFormProps = {
   companies: CompaniesData;
   updateFields: (fields: Partial<CompanyData> & { index: number }) => void;
+};
+
+//AdditionalInfoForm Data types
+export type AdditionalInfoFormProps = {
+  programmingLanguages: ProgrammingLanguages[];
+  updateFields: (fields: Partial<ProgrammingLanguages>) => void;
 };

@@ -1,66 +1,46 @@
 import React from "react";
 import { ProfileFormsWrapper } from "../ProfileFormsWrapper.tsx";
+import { AdditionalInfoFormProps } from "../../types/Types.ts";
+import "./AdditionalInfoForm.css";
 
-export const AdditionalInfoForm = () => {
+const getLanguageLabel = (name: string) => {
+  if (name === "cPlusPlus") return "C++";
+  return name.charAt(0).toUpperCase() + name.slice(1);
+};
+
+export const AdditionalInfoForm = ({
+  programmingLanguages,
+  updateFields,
+}: AdditionalInfoFormProps) => {
+  const handleCheckboxChange = (language: string, checked: boolean) => {
+    updateFields({ language, checked });
+  };
+
   return (
     <ProfileFormsWrapper title="Additional Info">
-      <fieldset style={{ padding: "24px" }}>
+      <fieldset className="fieldSet">
         <legend>Programming Languages:</legend>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "4px",
-          }}
-        >
-          <div>
-            <input type="checkbox" id="ruby" name="ruby" />
-            <label style={{ marginLeft: "12px" }} htmlFor="ruby">
-              Ruby
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="python" name="python" />
-            <label style={{ marginLeft: "12px" }} htmlFor="python">
-              Python
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="php" name="php" />
-            <label style={{ marginLeft: "12px" }} htmlFor="php">
-              PHP
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="javascript" name="javascript" />
-            <label style={{ marginLeft: "12px" }} htmlFor="javascript">
-              JavaScript
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="c" name="c" />
-            <label style={{ marginLeft: "12px" }} htmlFor="c">
-              C
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="c++" name="c++" />
-            <label style={{ marginLeft: "12px" }} htmlFor="c++">
-              C++
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="rust" name="rust" />
-            <label style={{ marginLeft: "12px" }} htmlFor="rust">
-              Rust
-            </label>
-          </div>
-          <div>
-            <input type="checkbox" id="go" name="go" />
-            <label style={{ marginLeft: "12px" }} htmlFor="go">
-              Go
-            </label>
-          </div>
+        <div className="fieldsContainer">
+          {programmingLanguages.map((lang, index) => {
+            const languageName = Object.keys(lang)[0];
+            const isChecked = lang[languageName].checked;
+            return (
+              <div key={index}>
+                <input
+                  type="checkbox"
+                  id={languageName}
+                  name={languageName}
+                  checked={isChecked}
+                  onChange={(e) =>
+                    handleCheckboxChange(languageName, e.target.checked)
+                  }
+                />
+                <label htmlFor={languageName}>
+                  {getLanguageLabel(languageName)}
+                </label>
+              </div>
+            );
+          })}
         </div>
       </fieldset>
     </ProfileFormsWrapper>
