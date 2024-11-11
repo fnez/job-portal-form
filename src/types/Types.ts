@@ -14,6 +14,7 @@ export type FormData = {
   firstName: string;
   lastName: string;
   email: string;
+  password: string;
   phoneNumber: string;
   companies: Company[];
   programmingLanguages: ProgrammingLanguages[];
@@ -24,6 +25,7 @@ type UserData = {
   firstName: string;
   lastName: string;
   email: string;
+  password: string;
   phoneNumber: string;
 };
 

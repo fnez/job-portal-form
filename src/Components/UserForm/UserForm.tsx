@@ -6,6 +6,7 @@ export const UserForm = ({
   firstName,
   lastName,
   email,
+  password,
   phoneNumber,
   updateFields,
 }: UserFormProps) => {
@@ -29,12 +30,21 @@ export const UserForm = ({
         onChange={(e) => updateFields({ lastName: e.target.value })}
       />
       <label htmlFor="">Email</label>
+
       <input
         className="textInput"
         type="text"
         required
         value={email}
         onChange={(e) => updateFields({ email: e.target.value })}
+      />
+      <label htmlFor="">Password</label>
+      <input
+        className="textInput"
+        type="password"
+        required
+        value={password}
+        onChange={(e) => updateFields({ password: e.target.value })}
       />
       <label htmlFor="">Phone Number</label>
       <input

@@ -1,8 +1,11 @@
 import "./App.css";
 import { LoginPage } from "./pages/LoginPage.tsx";
 import { CreateProfilePage } from "./pages/CreateProfilePage/CreateProfilePage.tsx";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage.tsx";
+import { HomePage } from "./pages/HomePage/HomePage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { NotFoundPage } from "./pages/NotFoundPage.tsx";
+import { DataProvider } from "./context/DataContext.tsx";
 
 const router = createBrowserRouter([
   {
@@ -14,12 +17,22 @@ const router = createBrowserRouter([
     path: "/create-profile",
     element: <CreateProfilePage />,
   },
+  {
+    path: "/profile",
+    element: <ProfilePage />,
+  },
+  {
+    path: "/home",
+    element: <HomePage />,
+  },
 ]);
 
 function App() {
   return (
     <main style={{ display: "flex", flexDirection: "column" }}>
-      <RouterProvider router={router}></RouterProvider>
+      <DataProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </DataProvider>
     </main>
   );
 }
