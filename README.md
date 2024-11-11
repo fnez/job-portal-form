@@ -1,26 +1,52 @@
-# job-portal-form
+# Job Portal Form
 
-A multi-step form UI for a job portal
+This is a **multi-step job portal form** application built with React. The project is set up with TypeScript, and you can run it locally using the instructions below.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Make sure you have the following installed on your local machine:
 
-## `npm start`
+- [Node.js](https://nodejs.org/) (version 16 or later)
+- [npm](https://www.npmjs.com/) (Node Package Manager, usually comes with Node.js)
+- [yarn](https://yarnpkg.com/) (optional but recommended for faster dependency installation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup Instructions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clone the repository
 
-## `npm test`
+Clone the project to your local machine using Git:
 
-Launches the test runner in the interactive watch mode.\
+```bash
+git clone https://github.com/yourusername/job-portal-form.git
+```
 
-## `npm run build`
+### 2. Install Dependencies
 
-Builds the app for production to the `build` folder.\
+```cd job-portal-form
+npm install
+```
+
+#### Or if using Yarn
+
+```
+yarn install
+```
+
+### Run tests
+
+```
+npm test
+```
+
+### Additional Information
+
+### This project is built using React and TypeScript, with the following dependencies:
+
+```
+React 18
+TypeScript 5.6
+React Router DOM
+```
 
 ## What I showcase with this project:
 
