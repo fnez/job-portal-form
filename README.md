@@ -17,7 +17,7 @@ Make sure you have the following installed on your local machine:
 Clone the project to your local machine using Git:
 
 ```bash
-git clone https://github.com/yourusername/job-portal-form.git
+git clone https://github.com/fnez/job-portal-form
 ```
 
 ### 2. Install Dependencies

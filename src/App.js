@@ -1,4 +1,3 @@
-import "./App.css";
 import { LoginPage } from "./pages/LoginPage.tsx";
 import { CreateProfilePage } from "./pages/CreateProfilePage/CreateProfilePage.tsx";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage.tsx";

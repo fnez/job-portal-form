@@ -5,7 +5,10 @@ type ProfileFormsWrapperProps = {
   children: ReactNode;
 };
 
-export const ProfileFormsWrapper = ({ title, children }) => {
+export const ProfileFormsWrapper = ({
+  title,
+  children,
+}: ProfileFormsWrapperProps) => {
   return (
     <>
       <h2 style={{ textAlign: "center", margin: 0, marginBottom: "2rem" }}>

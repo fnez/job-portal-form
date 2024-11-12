@@ -1,0 +1,109 @@
+.homePageContainer {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  min-width: 1200px;
+  width: 100vh;
+  border: 1px solid rgb(175, 175, 175);
+}
+
+.panel {
+  flex: 0 0 20%;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.panel .profileDetailsContainer {
+  display: flex;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.panel .profileDetailsContainer .profileDetails h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.panel .profileImg {
+  width: 60px;
+  height: 60px;
+  margin: 16px 16px 16px 0;
+}
+
+.panel .bioContainer ul.skills {
+  list-style-type: none;
+}
+
+.panel .bioContainer ul.skills li {
+  font-size: 18px;
+  padding: 8px 0;
+}
+
+.jobBoard {
+  flex: 1 1 80%;
+  padding: 1rem;
+}
+
+.navigationBar {
+  width: 100%;
+  background-color: #7c7c7c;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigationBar button {
+  background: none;
+  color: inherit;
+  border: 1px solid white;
+  padding: 12px;
+  border-radius: 8%;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Styles for the bioContainer */
+.bioContainer h1,
+.bioContainer h2 {
+  margin: 0.5rem 0;
+}
+
+/* Job board styling */
+.jobBoard ul {
+  padding: 0;
+}
+
+.jobBoard li {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jobInfo {
+  display: flex;
+}
+
+.status button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.sent {
+  background-color: #cfe4cf;
+}
+
+.status .sentText {
+  color: green;
+  font-weight: bold;
+  font-size: 1rem;
+}
