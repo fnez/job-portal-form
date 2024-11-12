@@ -53,3 +53,13 @@ export type AdditionalInfoFormProps = {
   programmingLanguages: ProgrammingLanguages[];
   updateFields: (fields: Partial<ProgrammingLanguages>) => void;
 };
+
+//Job Board Data Types
+type JobBoard = {
+  title: string;
+  company: string;
+  location: string;
+  applied: boolean;
+};
+
+export type JobBoardData = JobBoard[];

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const LoginForm = () => {
   return (
-    <div className="container">
+    <div className="loginFormContainer">
       <form action="">
         <h1>Sign In</h1>
         <div className="input-box">

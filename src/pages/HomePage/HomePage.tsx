@@ -3,6 +3,8 @@ import { FaCircleUser } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../../context/DataContext.tsx";
 import { INITIAL_DATA } from "../../data/initialFormData.ts";
+import { JOB_BOARD_DATA } from "../../data/jobBoardData.ts";
+import "./HomePage.css";
 
 export const HomePage = () => {
   const navigate = useNavigate();
@@ -33,22 +35,50 @@ export const HomePage = () => {
   return (
     <>
       <div className="navigationBar">
+        {" "}
         <button type="button" onChange={handleLogout}>
           Logout
         </button>
       </div>
-      <div className="panel">
-        <div className="bioContainer">
-          {/* <img src="" alt="profile-picture" />
-           */}
-          <FaCircleUser />
-          <h1>{name}</h1>
-          <span>{email}</span>
+      <div className="homePageContainer">
+        <div className="panel">
+          <div className="bioContainer">
+            {/* <img src="" alt="profile-picture" />
+             */}
+            <div className="profileDetailsContainer">
+              <FaCircleUser className="profileImg" />
+              <div className="profileDetails">
+                <h2>{name}</h2>
+                <span>{email}</span>
+              </div>
+            </div>
 
-          <h2>Skills</h2>
+            <h3>Skills</h3>
+            <ul className="skills">
+              {selectedLanguages.map((lang) => (
+                <li key={lang}>{capitalize(lang)}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="jobBoard">
           <ul>
-            {selectedLanguages.map((lang) => (
-              <li key={lang}>{capitalize(lang)}</li>
+            {JOB_BOARD_DATA.map((job) => (
+              <li className={job.applied ? "sent" : ""}>
+                <div className="jobInfoContainer">
+                  <h3>{job.title}</h3>
+                  <div className="jobInfo">
+                    <p>{job.company}</p>—<span>{job.location}</span>
+                  </div>
+                </div>
+                <div className="status">
+                  {job.applied ? (
+                    <span className="sentText">Application Sent!</span>
+                  ) : (
+                    <button type="button">Send Application</button>
+                  )}
+                </div>
+              </li>
             ))}
           </ul>
         </div>
