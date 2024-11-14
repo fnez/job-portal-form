@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { FaCircleUser } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../../context/DataContext.tsx";
@@ -28,7 +28,7 @@ export const HomePage = () => {
     });
 
   const handleLogout = () => {
-    setData(INITIAL_DATA);
+    // setData(INITIAL_DATA);
     navigate("/");
   };
 
@@ -36,7 +36,7 @@ export const HomePage = () => {
     <>
       <div className="navigationBar">
         {" "}
-        <button type="button" onChange={handleLogout}>
+        <button type="button" onClick={handleLogout}>
           Logout
         </button>
       </div>

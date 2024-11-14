@@ -52,6 +52,7 @@ export const UserForm = ({
         type="tel"
         name="phone"
         value={phoneNumber}
+        placeholder="Optional"
         onChange={(e) => updateFields({ phoneNumber: e.target.value })}
       />
     </ProfileFormsWrapper>

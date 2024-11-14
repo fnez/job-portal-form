@@ -61,7 +61,6 @@ export const CreateProfilePage = () => {
         programmingLanguages: updatedProgrammingLanguages,
       };
     });
-    console.log("A. data is : ", data);
   };
 
   const {

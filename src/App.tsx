@@ -1,4 +1,4 @@
-import { LoginPage } from "./pages/LoginPage.tsx";
+import { LoginForm } from "./components/LoginForm/LoginForm.tsx";
 import { CreateProfilePage } from "./pages/CreateProfilePage/CreateProfilePage.tsx";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage.tsx";
 import { HomePage } from "./pages/HomePage/HomePage.tsx";
@@ -9,7 +9,7 @@ import { DataProvider } from "./context/DataContext.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage />,
+    element: <LoginForm />,
     errorElement: <NotFoundPage />,
   },
   {
