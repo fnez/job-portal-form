@@ -61,7 +61,6 @@ export const CreateProfilePage = () => {
         programmingLanguages: updatedProgrammingLanguages,
       };
     });
-    console.log("A. data is : ", data);
   };
 
   const {
@@ -86,6 +85,7 @@ export const CreateProfilePage = () => {
     if (!isLastStep) return handleNext();
     alert("Succesful Account Creation");
     navigate("/home");
+    localStorage.setItem("user", JSON.stringify(data));
   };
 
   return (

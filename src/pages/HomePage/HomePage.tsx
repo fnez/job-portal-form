@@ -10,6 +10,7 @@ export const HomePage = () => {
   const navigate = useNavigate();
   const { data, setData } = useContext(DataContext);
   const { firstName, lastName, email, programmingLanguages } = data;
+  const [jobData, setJobData] = useState(JOB_BOARD_DATA);
 
   const capitalize = (word: string) =>
     word.charAt(0).toUpperCase() + word.slice(1);
@@ -32,11 +33,15 @@ export const HomePage = () => {
     navigate("/");
   };
 
+  const handleSendApplication = (jobTitle) => {
+    setData((prev) => prevData.map());
+  };
+
   return (
     <>
       <div className="navigationBar">
         {" "}
-        <button type="button" onChange={handleLogout}>
+        <button type="button" onClick={handleLogout}>
           Logout
         </button>
       </div>
@@ -75,7 +80,9 @@ export const HomePage = () => {
                   {job.applied ? (
                     <span className="sentText">Application Sent!</span>
                   ) : (
-                    <button type="button">Send Application</button>
+                    <button type="button" onClick={handleSendApplication}>
+                      Send Application
+                    </button>
                   )}
                 </div>
               </li>

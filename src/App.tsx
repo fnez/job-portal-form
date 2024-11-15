@@ -1,15 +1,17 @@
-import { LoginPage } from "./pages/LoginPage.tsx";
+import { LoginForm } from "./components/LoginForm/LoginForm.tsx";
 import { CreateProfilePage } from "./pages/CreateProfilePage/CreateProfilePage.tsx";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage.tsx";
 import { HomePage } from "./pages/HomePage/HomePage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { NotFoundPage } from "./pages/NotFoundPage.tsx";
 import { DataProvider } from "./context/DataContext.tsx";
+import { AuthProvider } from "./context/AuthContext.tsx";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage />,
+    element: <LoginForm />,
     errorElement: <NotFoundPage />,
   },
   {
@@ -18,10 +20,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile",
-    element: <ProfilePage />,
+    element: (
+      <ProtectedRoute>
+        <ProfilePage />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/home",
+    // element: (
+    //   <ProtectedRoute>
+    //     <HomePage />
+    //   </ProtectedRoute>
+    // ),
     element: <HomePage />,
   },
 ]);
@@ -29,9 +40,11 @@ const router = createBrowserRouter([
 function App() {
   return (
     <main style={{ display: "flex", flexDirection: "column" }}>
-      <DataProvider>
-        <RouterProvider router={router}></RouterProvider>
-      </DataProvider>
+      <AuthProvider>
+        <DataProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </DataProvider>
+      </AuthProvider>
     </main>
   );
 }
