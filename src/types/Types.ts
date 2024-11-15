@@ -63,3 +63,10 @@ type JobBoard = {
 };
 
 export type JobBoardData = JobBoard[];
+
+//Authentication Context
+export type AuthContextType = {
+  isAuthenticated: boolean;
+  login: (user: object) => void;
+  logout: () => void;
+};

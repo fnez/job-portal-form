@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaCircleUser } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../../context/DataContext.tsx";
@@ -10,6 +10,7 @@ export const HomePage = () => {
   const navigate = useNavigate();
   const { data, setData } = useContext(DataContext);
   const { firstName, lastName, email, programmingLanguages } = data;
+  const [jobData, setJobData] = useState(JOB_BOARD_DATA);
 
   const capitalize = (word: string) =>
     word.charAt(0).toUpperCase() + word.slice(1);
@@ -28,8 +29,12 @@ export const HomePage = () => {
     });
 
   const handleLogout = () => {
-    // setData(INITIAL_DATA);
+    setData(INITIAL_DATA);
     navigate("/");
+  };
+
+  const handleSendApplication = (jobTitle) => {
+    setData((prev) => prevData.map());
   };
 
   return (
@@ -75,7 +80,9 @@ export const HomePage = () => {
                   {job.applied ? (
                     <span className="sentText">Application Sent!</span>
                   ) : (
-                    <button type="button">Send Application</button>
+                    <button type="button" onClick={handleSendApplication}>
+                      Send Application
+                    </button>
                   )}
                 </div>
               </li>

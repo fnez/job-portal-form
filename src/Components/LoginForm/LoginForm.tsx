@@ -4,22 +4,32 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import DataContext from "../../context/DataContext.tsx";
 import { useNavigate } from "react-router-dom";
+// import { useAuth } from "../../context/AuthContext.tsx";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { data } = useContext(DataContext);
+  const { data, setData } = useContext(DataContext);
   const navigate = useNavigate();
+  // const { login } = useAuth();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log("Profile data is ", data);
+    const storedUser = localStorage.getItem("user");
 
-    if (email === data.email && password === data.password) {
-      navigate("/home");
+    //Accesses the localStorage object
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      if (user && email === user.email && password === user.password) {
+        navigate("/home");
+        setData(user);
+      } else {
+        alert("Invalid email or password.Please try again ");
+      }
     } else {
-      alert("Invalid email or password.Please try again ");
+      alert("No user found, Please create an account.");
     }
+    //Set the INITIAL_DATA to the localStorage data again
   };
 
   return (

@@ -16,6 +16,8 @@ interface DataProviderProps {
   children: ReactNode;
 }
 
+//Using the context API to manage data access across components
+//This prevents prop-drilling for passing the data
 export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   const [data, setData] = useState<FormData>(INITIAL_DATA);
 
