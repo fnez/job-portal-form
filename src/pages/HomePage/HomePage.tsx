@@ -33,8 +33,12 @@ export const HomePage = () => {
     navigate("/");
   };
 
-  const handleSendApplication = (jobTitle) => {
-    setData((prev) => prevData.map());
+  const handleSendApplication = (jobId: number) => {
+    setJobData((prevData) =>
+      prevData.map((job) =>
+        job.id === jobId ? { ...job, applied: true } : job
+      )
+    );
   };
 
   return (
@@ -68,7 +72,7 @@ export const HomePage = () => {
         </div>
         <div className="jobBoard">
           <ul>
-            {JOB_BOARD_DATA.map((job) => (
+            {jobData.map((job) => (
               <li className={job.applied ? "sent" : ""}>
                 <div className="jobInfoContainer">
                   <h3>{job.title}</h3>
@@ -80,7 +84,10 @@ export const HomePage = () => {
                   {job.applied ? (
                     <span className="sentText">Application Sent!</span>
                   ) : (
-                    <button type="button" onClick={handleSendApplication}>
+                    <button
+                      type="button"
+                      onClick={() => handleSendApplication(job.id)}
+                    >
                       Send Application
                     </button>
                   )}

@@ -56,6 +56,7 @@ export type AdditionalInfoFormProps = {
 
 //Job Board Data Types
 type JobBoard = {
+  id: number;
   title: string;
   company: string;
   location: string;
