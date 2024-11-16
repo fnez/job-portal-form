@@ -6,7 +6,7 @@ import { UserForm } from "../../components/UserForm/UserForm.tsx";
 import { WorkForm } from "../../components/WorkForm/WorkForm.tsx";
 import { AdditionalInfoForm } from "../../components/AdditionalInfoForm/AdditionalInfoForm.tsx";
 import "./CreateProfilePage.css";
-import { FormData } from "src/types/Types.ts";
+import { FormData, Company } from "src/types/Types.ts";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../../context/DataContext.tsx";
 
@@ -34,6 +34,22 @@ export const CreateProfilePage = () => {
       const updatedCompanies = prev.companies.map((company, i) =>
         i === index ? { ...company, ...companyFields } : company
       );
+      return {
+        ...prev,
+        companies: updatedCompanies,
+      };
+    });
+  };
+
+  const addWorkForm = () => {
+    const newCompany: Company = {
+      company: "",
+      startDate: "",
+      endDate: "",
+      responsibilities: "",
+    };
+    setData((prev) => {
+      const updatedCompanies = [...prev.companies, newCompany];
       return {
         ...prev,
         companies: updatedCompanies,
@@ -73,7 +89,11 @@ export const CreateProfilePage = () => {
     handleNext,
   } = useMultistepForm([
     <UserForm {...data} updateFields={updateUserFormFields} />,
-    <WorkForm {...data} updateFields={updateWorkFormFields} />,
+    <WorkForm
+      {...data}
+      updateFields={updateWorkFormFields}
+      addWorkForm={addWorkForm}
+    />,
     <AdditionalInfoForm
       {...data}
       updateFields={updateAdditionalInfoFormFields}
@@ -83,9 +103,10 @@ export const CreateProfilePage = () => {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!isLastStep) return handleNext();
+
+    localStorage.setItem("user", JSON.stringify(data));
     alert("Succesful Account Creation");
     navigate("/home");
-    localStorage.setItem("user", JSON.stringify(data));
   };
 
   return (

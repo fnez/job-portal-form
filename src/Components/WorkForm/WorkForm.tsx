@@ -4,7 +4,11 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { WorkFormProps } from "../../types/Types.ts";
 import "../GlobalFormStyles.css";
 
-export const WorkForm = ({ companies, updateFields }: WorkFormProps) => {
+export const WorkForm = ({
+  companies,
+  updateFields,
+  addWorkForm,
+}: WorkFormProps) => {
   return (
     <>
       <ProfileFormsWrapper title="Work Experience">
@@ -66,13 +70,18 @@ export const WorkForm = ({ companies, updateFields }: WorkFormProps) => {
           margin: "36px 0",
         }}
       >
-        <FaCirclePlus
-          style={{
-            color: "tomato",
-            fontSize: "32px",
-            cursor: "pointer",
-          }}
-        />
+        <button
+          onClick={addWorkForm}
+          style={{ border: "none", background: "transparent" }}
+        >
+          <FaCirclePlus
+            style={{
+              color: "tomato",
+              fontSize: "32px",
+              cursor: "pointer",
+            }}
+          />
+        </button>
       </div>
     </>
   );

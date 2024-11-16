@@ -2,8 +2,6 @@
   display: flex;
   flex-grow: 1;
   height: 100%;
-  min-width: 1200px;
-  width: 100vh;
   border: 1px solid rgb(175, 175, 175);
 }
 
@@ -84,8 +82,13 @@
   justify-content: space-between;
 }
 
+.jobInfoContainer h3 {
+  font-size: 20px;
+}
+
 .jobInfo {
   display: flex;
+  font-size: 16px;
 }
 
 .status button {
@@ -94,7 +97,7 @@
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 15px;
   border-radius: 4px;
 }
 
@@ -102,8 +105,12 @@
   background-color: #cfe4cf;
 }
 
+.status {
+  margin-left: 32px;
+}
+
 .status .sentText {
   color: green;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 15px;
 }

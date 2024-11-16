@@ -41,6 +41,8 @@ export const HomePage = () => {
     );
   };
 
+  console.log("data is ", data);
+
   return (
     <>
       <div className="navigationBar">
