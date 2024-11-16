@@ -46,6 +46,7 @@ type CompaniesData = CompanyData[];
 export type WorkFormProps = {
   companies: CompaniesData;
   updateFields: (fields: Partial<CompanyData> & { index: number }) => void;
+  addWorkForm: () => void;
 };
 
 //AdditionalInfoForm Data types
