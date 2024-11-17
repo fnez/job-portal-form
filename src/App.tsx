@@ -1,6 +1,5 @@
 import { LoginForm } from "./components/LoginForm/LoginForm.tsx";
 import { CreateProfilePage } from "./pages/CreateProfilePage/CreateProfilePage.tsx";
-import { ProfilePage } from "./pages/ProfilePage/ProfilePage.tsx";
 import { HomePage } from "./pages/HomePage/HomePage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { NotFoundPage } from "./pages/NotFoundPage.tsx";
@@ -17,14 +16,6 @@ const router = createBrowserRouter([
   {
     path: "/create-profile",
     element: <CreateProfilePage />,
-  },
-  {
-    path: "/profile",
-    element: (
-      <ProtectedRoute>
-        <ProfilePage />
-      </ProtectedRoute>
-    ),
   },
   {
     path: "/home",
