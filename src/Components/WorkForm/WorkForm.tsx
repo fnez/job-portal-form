@@ -72,11 +72,14 @@ export const WorkForm = ({
       >
         <button
           onClick={addWorkForm}
-          style={{ border: "none", background: "transparent" }}
+          style={{
+            border: "none",
+            background: "transparent",
+          }}
         >
           <FaCirclePlus
             style={{
-              color: "tomato",
+              color: "white",
               fontSize: "32px",
               cursor: "pointer",
             }}
