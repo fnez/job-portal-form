@@ -51,14 +51,14 @@ export const JOB_BOARD_DATA: JobBoardData = [
     applied: false,
   },
   {
-    id: 7,
+    id: 8,
     title: "Jr. Software Engineer",
     company: "AirBnB",
     location: "San Jose, CA",
     applied: false,
   },
   {
-    id: 8,
+    id: 9,
     title: "Frontend Software Engineer",
     company: "CNN",
     location: "Atlanta, GA",

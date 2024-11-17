@@ -15,8 +15,9 @@ export const WorkForm = ({
         {companies.map(
           ({ company, startDate, endDate, responsibilities }, index) => (
             <React.Fragment key={index}>
-              <label htmlFor="">Company</label>
+              <label htmlFor="company">Company</label>
               <input
+                id="company"
                 className="textInput"
                 type="text"
                 required
@@ -26,8 +27,9 @@ export const WorkForm = ({
                   updateFields({ company: e.target.value, index })
                 }
               />
-              <label htmlFor="">Start Date</label>
+              <label htmlFor="startDate">Start Date</label>
               <input
+                id="startDate"
                 className="textInput"
                 type="date"
                 required
@@ -36,8 +38,9 @@ export const WorkForm = ({
                   updateFields({ startDate: e.target.value, index })
                 }
               />
-              <label htmlFor="">End Date</label>
+              <label htmlFor="endDate">End Date</label>
               <input
+                id="endDate"
                 className="textInput"
                 type="date"
                 required
@@ -46,7 +49,7 @@ export const WorkForm = ({
                   updateFields({ endDate: e.target.value, index })
                 }
               />
-              <label htmlFor="">Responsibilities</label>
+              <label htmlFor="responsibilities">Responsibilities</label>
               <textarea
                 id="responsibilities"
                 name="responsibilities"

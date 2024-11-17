@@ -1,4 +1,3 @@
-import React from "react";
 import { ProfileFormsWrapper } from "../ProfileFormsWrapper.tsx";
 import { AdditionalInfoFormProps } from "../../types/Types.ts";
 import "./AdditionalInfoForm.css";
