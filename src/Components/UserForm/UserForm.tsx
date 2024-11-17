@@ -12,8 +12,9 @@ export const UserForm = ({
 }: UserFormProps) => {
   return (
     <ProfileFormsWrapper title="Personal Details">
-      <label htmlFor="">First name</label>
+      <label htmlFor="firstName">First name</label>
       <input
+        id="firstName"
         className="textInput"
         type="text"
         required
@@ -21,33 +22,37 @@ export const UserForm = ({
         value={firstName}
         onChange={(e) => updateFields({ firstName: e.target.value })}
       />
-      <label htmlFor="">Last name</label>
+      <label htmlFor="lastName">Last name</label>
       <input
+        id="lastName"
         className="textInput"
         type="text"
         required
         value={lastName}
         onChange={(e) => updateFields({ lastName: e.target.value })}
       />
-      <label htmlFor="">Email</label>
+      <label htmlFor="email">Email</label>
 
       <input
+        id="email"
         className="textInput"
         type="text"
         required
         value={email}
         onChange={(e) => updateFields({ email: e.target.value })}
       />
-      <label htmlFor="">Password</label>
+      <label htmlFor="password">Password</label>
       <input
+        id="password"
         className="textInput"
         type="password"
         required
         value={password}
         onChange={(e) => updateFields({ password: e.target.value })}
       />
-      <label htmlFor="">Phone Number</label>
+      <label htmlFor="phone">Phone Number</label>
       <input
+        id="phone"
         className="textInput"
         type="tel"
         name="phone"

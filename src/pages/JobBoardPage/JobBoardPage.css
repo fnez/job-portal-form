@@ -23,6 +23,10 @@
   margin: 0;
 }
 
+.panel .profileDetailsContainer .profileDetails span {
+  font-size: 18px;
+}
+
 .panel .profileImg {
   width: 60px;
   height: 60px;
@@ -93,7 +97,7 @@
 }
 
 .status button {
-  background-color: #4a90e2;
+  background-color: #df4d6a;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -111,7 +115,7 @@
 }
 
 .status .sentText {
-  color: green;
+  color: teal;
   font-weight: bold;
   font-size: 15px;
 }
