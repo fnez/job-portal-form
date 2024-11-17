@@ -19,5 +19,7 @@ export const INITIAL_DATA: FormData = {
     { cPlusPlus: { checked: false } },
     { rust: { checked: false } },
     { go: { checked: false } },
+    { html: { checked: false } },
+    { css: { checked: false } },
   ],
 };

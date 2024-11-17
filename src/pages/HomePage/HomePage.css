@@ -1,46 +1,8 @@
-.homePageContainer {
+.mainContainer {
+  min-width: 860px;
+  min-height: 800px;
   display: flex;
-  flex-grow: 1;
-  height: 100%;
-  border: 1px solid rgb(175, 175, 175);
-}
-
-.panel {
-  flex: 0 0 20%;
-  background-color: #f4f4f4;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.panel .profileDetailsContainer {
-  display: flex;
-  margin-bottom: 24px;
-  align-items: center;
-}
-
-.panel .profileDetailsContainer .profileDetails h2 {
-  font-size: 28px;
-  margin: 0;
-}
-
-.panel .profileImg {
-  width: 60px;
-  height: 60px;
-  margin: 16px 16px 16px 0;
-}
-
-.panel .bioContainer ul.skills {
-  list-style-type: none;
-}
-
-.panel .bioContainer ul.skills li {
-  font-size: 18px;
-  padding: 8px 0;
-}
-
-.jobBoard {
-  flex: 1 1 80%;
-  padding: 1rem;
+  flex-direction: column;
 }
 
 .navigationBar {
@@ -54,63 +16,17 @@
 
 .navigationBar button {
   background: none;
+  border: none;
   color: inherit;
-  border: 1px solid white;
-  padding: 12px;
-  border-radius: 8%;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
+  text-decoration: none;
+  margin-left: 18px;
 }
 
-/* Styles for the bioContainer */
-.bioContainer h1,
-.bioContainer h2 {
-  margin: 0.5rem 0;
-}
-
-/* Job board styling */
-.jobBoard ul {
-  padding: 0;
-}
-
-.jobBoard li {
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.jobInfoContainer h3 {
-  font-size: 20px;
-}
-
-.jobInfo {
-  display: flex;
-  font-size: 16px;
-}
-
-.status button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  font-size: 15px;
-  border-radius: 4px;
-}
-
-.sent {
-  background-color: #cfe4cf;
-}
-
-.status {
-  margin-left: 32px;
-}
-
-.status .sentText {
-  color: green;
-  font-weight: bold;
-  font-size: 15px;
+.navigationBar .logoutBtn {
+  border: 1px solid white;
+  padding: 12px;
+  border-radius: 8%;
 }

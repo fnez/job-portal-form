@@ -72,3 +72,21 @@ export type AuthContextType = {
   login: (user: object) => void;
   logout: () => void;
 };
+
+//JobBoardPage Props
+export type JobBoardPageProps = {
+  jobData: JobBoard[];
+  name: string;
+  email: string;
+  handleSend: (jobId: number) => void;
+};
+
+//JobBoardPage Props
+export type ProfilePageProps = {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  companies: Company[];
+  programmingLanguages: ProgrammingLanguages[];
+  capitalize: (lang: string) => string;
+};
