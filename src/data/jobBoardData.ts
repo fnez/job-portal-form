@@ -6,7 +6,7 @@ export const JOB_BOARD_DATA: JobBoardData = [
     title: "Backend Developer",
     company: "Microsoft",
     location: "Atlanta, GA",
-    applied: false,
+    applied: true,
   },
   {
     id: 2,
@@ -34,6 +34,34 @@ export const JOB_BOARD_DATA: JobBoardData = [
     title: "Staff Engineer",
     company: "Google",
     location: "San Jose, CA",
+    applied: false,
+  },
+  {
+    id: 6,
+    title: "UX Designer",
+    company: "IBM",
+    location: "San Jose, CA",
+    applied: false,
+  },
+  {
+    id: 7,
+    title: "Senior UX Engineer",
+    company: "MIT",
+    location: "Boston, MS",
+    applied: false,
+  },
+  {
+    id: 7,
+    title: "Jr. Software Engineer",
+    company: "AirBnB",
+    location: "San Jose, CA",
+    applied: false,
+  },
+  {
+    id: 8,
+    title: "Frontend Software Engineer",
+    company: "CNN",
+    location: "Atlanta, GA",
     applied: false,
   },
 ];
